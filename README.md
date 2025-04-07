@@ -1,46 +1,53 @@
-# Getting Started with Create React App
+> Webd:3012
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Coding Assignment 14: Portfolio Website
 
-## Available Scripts
+## Project Setup
 
-In the project directory, you can run:
+Update CRA:
 
-### `npm start`
+    npm install -g create-react-app
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Initialize react project with typescript:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+    npx create-react-app@latest my-app --template typescript
 
-### `npm test`
+## Building the Portfolio Site
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Create Navigation bar in `App.tsx` and `App.css`:
 
-### `npm run build`
+  - **logo**
+  - **aligning items with flex**
+  - **hover styling**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Import component library:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+     npm install github:cmustapha155/webd-3012-assignment-13#main
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Note that the names of the library's remote repository (webd-3012-assignment-13), local folder linked to the repo (ui-garden-build-checks), and the name of the library as defined in the package.json file (ui-garden-f) are not the same
+- after installing the library, its name is used to refer to it in code
 
-### `npm run eject`
+❌ Error on the import statement to import a component to my portfolio site:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+    Cannot find module 'ui-garden-f' or its corresponding type declarations.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- I checked that everything was installed properly, the library is present in node_modules, the library's package file is properly configured...
+- **`dist`** folder was not committed to the remote library repo, as it was in `.gitignore`
+- ✅ removed `dist` from the .gitignore file and pushed it to the remote repository, then reinstalled the library
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Using the HeroImage:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+    import { HeroImage } from 'ui-garden-f';
 
-## Learn More
+## Containerizing the Application
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Create Production Build
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Create a production build (similar to storybook-static):
+
+    npm run build
+
+### Dockerfile
+
+## How to Get the Application Running at `localhost:5575`
+

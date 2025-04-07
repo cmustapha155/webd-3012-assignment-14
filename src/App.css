@@ -1,5 +1,9 @@
 /* MISC */
 
+body {
+  background-color: #EBEBEB;
+}
+
 /* remove default link styling */
 a {
   color: inherit;
@@ -113,11 +117,38 @@ a:active {
 
 /* SECTIONS */
 
-section {
+section:not(#projects) {
   width: 60vw;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: lightpink;
+  margin: 20px auto 20px auto;
+  background-color: white;
+  padding: 20px;
+  border: 1.5px solid lightgrey;
+  border-radius: 3px;
+}
+
+#work {
+  text-align: center;
+  margin-top: 40px;
+}
+
+#projects {
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: #93c5c3;
+
+}
+
+#projects div {
+  font-family: 'Inter', sans-serif;
+  width: 20vw;
+  margin: 20px 2vw 20px 2vw;
+  background-color: white;
+}
+
+#projects div:hover {
+  box-shadow: 0px 3px 10px #d5d5d5;
 }
 
 /* FOOTER */
